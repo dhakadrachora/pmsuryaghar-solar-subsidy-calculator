@@ -1,0 +1,8 @@
+{
+  "name": "pmsuryaghar-solar-subsidy-calculator",
+  "version": "1.0.0",
+  "description": "Calculate exact government subsidy (Up to \u20b978,000), system cost, and monthly electricity bill savings for rooftop solar.",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
