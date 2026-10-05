@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pmsuryaghar-solar-subsidy-calculator.vercel.app/sitemap.xml

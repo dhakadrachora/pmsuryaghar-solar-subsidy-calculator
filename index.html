@@ -1,259 +1,153 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PM Surya Ghar Solar Subsidy & Rooftop Calculator (Official 2026)</title>
-  <meta name="description" content="Calculate exact central government DBT subsidy (Up to ₹78,000), required solar capacity (kW), and monthly electricity bill savings for rooftop solar.">
-  <meta name="keywords" content="pmsuryaghar-solar-subsidy-calculator, free online tool, 1080p downloader, high speed utility, dhotiaale, 2026">
-  <meta name="author" content="Dhotiaale Network">
-  <meta name="robots" content="index, follow">
+  <title>PM Surya Ghar Solar Subsidy Calculator 2026 (Official DBT Rates)</title>
+  <meta name="description" content="Calculate exact central government DBT subsidy (up to ₹78,000), monthly savings, and rooftop capacity.">
   <link rel="canonical" href="https://pmsuryaghar-solar-subsidy-calculator.vercel.app">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pmsuryaghar-solar-subsidy-calculator.vercel.app">
-  <meta property="og:title" content="PM Surya Ghar Solar Subsidy & Rooftop Calculator (Official 2026)">
-  <meta property="og:description" content="Calculate exact central government DBT subsidy (Up to ₹78,000), required solar capacity (kW), and monthly electricity bill savings for rooftop solar.">
-  <meta property="twitter:card" content="summary_large_image">
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .glass-card {
       background: rgba(15, 23, 42, 0.75);
       backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glow-bg {
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(168, 85, 247, 0.15) 50%, rgba(0, 0, 0, 0) 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PM Surya Ghar Solar Subsidy Calculator 2026 (Official DBT Rates)",
+    "url": "https://pmsuryaghar-solar-subsidy-calculator.vercel.app",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+<!-- DevSecOps Input Sanitizer & XSS Defense Layer -->
+<script>
+window.sanitizeInput = function(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+window.sanitizeUrl = function(url) {
+  if (!url) return '';
+  const clean = url.trim();
+  if (clean.startsWith('javascript:') || clean.startsWith('data:text/html')) {
+    console.warn('Blocked potentially malicious URL protocol');
+    return '#';
+  }
+  return clean;
+};
+</script>
+
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white relative overflow-x-hidden">
-
-  <div class="glow-bg"></div>
-
-  <!-- Announcement Bar -->
-  <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-400 text-white py-1.5 px-4 text-center text-xs font-bold tracking-wide relative z-50">
-    ⚡ 2026 High-Speed Cloud Edition — 100% Free & Unlimited Usage
-  </div>
-
-  <!-- Navigation Header -->
-  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <span class="text-3xl p-2.5 bg-slate-900 border border-slate-800 rounded-2xl group-hover:scale-105 transition-transform shadow-lg shadow-indigo-500/10">
-          ☀️
-        </span>
-        <div>
-          <span class="font-extrabold text-xl tracking-tight text-white block group-hover:text-indigo-400 transition-colors">
-            PM Surya Ghar Calculator
-          </span>
-          <span class="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">
-            Govt Scheme Calculator
-          </span>
-        </div>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 font-extrabold text-lg text-white">
+        <span class="p-2 bg-gradient-to-tr from-indigo-500 to-purple-600 rounded-xl shadow-lg">☀️</span>
+        <span>PM Surya Ghar Solar Subsidy Calculator 2026 (Official DBT Rates)</span>
       </a>
-
-      <div class="flex items-center gap-3">
-        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Server Active
-        </span>
-        <a href="https://dhotiaale.vercel.app/tools" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-indigo-500/50 text-slate-200 hover:text-white text-xs font-bold rounded-xl transition-all shadow-sm">
-          More Tools (20) →
-        </a>
-      </div>
+      <a href="https://dhotiaale.vercel.app/tools" class="text-xs sm:text-sm font-bold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl transition-colors">Explore 20+ Tools ↗</a>
     </div>
   </header>
 
-  <!-- Main Container -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-10 w-full space-y-10 relative z-10">
-
-    <div class="text-center space-y-4 max-w-3xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-bold text-indigo-400 shadow-sm">
-        ⚡ Up to ₹78,000 Subsidy
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-        Official 2026 Solar Subsidy & Savings Estimator
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-        Calculate exact central government DBT subsidy (Up to ₹78,000), required solar capacity (kW), and monthly electricity bill savings for rooftop solar.
-      </p>
+  <main class="flex-1 max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 w-full space-y-8">
+    <div class="text-center space-y-3">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">⚡ 100% Free & Fast 2026 Cloud Tool</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">PM Surya Ghar Solar Subsidy Calculator 2026 (Official DBT Rates)</h1>
+      <p class="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">Calculate exact central government DBT subsidy (up to ₹78,000), monthly savings, and rooftop capacity.</p>
     </div>
 
-    <!-- Main Tool Card -->
-    <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl shadow-indigo-950/30 border border-slate-800">
-      
-        <div class="space-y-8">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div class="space-y-3">
-              <div class="flex justify-between"><label class="text-sm font-semibold text-slate-300">Average Monthly Electricity Bill</label><span id="billVal" class="text-base font-extrabold text-amber-400">₹2,500</span></div>
-              <input id="billSlider" type="range" min="500" max="15000" step="200" value="2500" oninput="updateSolar()" class="w-full h-2.5 bg-slate-800 rounded-lg accent-amber-400 cursor-pointer">
+    
+        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Monthly Electricity Bill (₹)</label>
+              <input id="solar-bill" type="number" value="3000" oninput="calcSolar()" class="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
             </div>
-            <div class="space-y-3">
-              <div class="flex justify-between"><label class="text-sm font-semibold text-slate-300">Available Roof Area (Sq. Ft.)</label><span id="roofVal" class="text-base font-extrabold text-indigo-400">200 sq ft</span></div>
-              <input id="roofSlider" type="range" min="50" max="2000" step="50" value="200" oninput="updateSolar()" class="w-full h-2.5 bg-slate-800 rounded-lg accent-indigo-400 cursor-pointer">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Rooftop Area (Sq Ft)</label>
+              <input id="solar-area" type="number" value="300" oninput="calcSolar()" class="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1">Tariff Rate (₹/kWh)</label>
+              <input id="solar-tariff" type="number" value="8" oninput="calcSolar()" class="w-full bg-slate-950/80 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500">
             </div>
           </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-            <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-2xl"><div class="text-xs text-slate-400 font-medium">Recommended Solar</div><div id="solKw" class="text-2xl font-black text-white mt-1">2 kW</div></div>
-            <div class="p-4 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl"><div class="text-xs text-emerald-300 font-medium">Govt Subsidy (DBT)</div><div id="solSub" class="text-2xl font-black text-emerald-400 mt-1">₹60,000</div></div>
-            <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-2xl"><div class="text-xs text-slate-400 font-medium">Net Cost to You</div><div id="solNet" class="text-2xl font-black text-amber-400 mt-1">₹64,000</div></div>
-            <div class="p-4 bg-indigo-950/40 border border-indigo-500/30 rounded-2xl"><div class="text-xs text-indigo-300 font-medium">Annual Savings</div><div id="solSav" class="text-2xl font-black text-indigo-400 mt-1">₹30,000</div></div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-slate-800">
+            <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl text-center">
+              <span class="text-xs text-slate-400">System Size</span>
+              <div id="res-kw" class="text-xl font-extrabold text-amber-400 mt-1">3.0 kW</div>
+            </div>
+            <div class="p-4 bg-slate-950/60 border border-emerald-500/30 bg-emerald-500/5 rounded-xl text-center">
+              <span class="text-xs text-emerald-400 font-bold">Govt DBT Subsidy</span>
+              <div id="res-subsidy" class="text-xl font-extrabold text-emerald-400 mt-1">₹78,000</div>
+            </div>
+            <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl text-center">
+              <span class="text-xs text-slate-400">Net Cost</span>
+              <div id="res-netcost" class="text-xl font-extrabold text-white mt-1">₹1,02,000</div>
+            </div>
+            <div class="p-4 bg-slate-950/60 border border-slate-800 rounded-xl text-center">
+              <span class="text-xs text-slate-400">Annual Savings</span>
+              <div id="res-savings" class="text-xl font-extrabold text-cyan-400 mt-1">₹34,560 / yr</div>
+            </div>
           </div>
         </div>
-
         <script>
-          function updateSolar() {
-            var bill = parseInt(document.getElementById('billSlider').value);
-            var roof = parseInt(document.getElementById('roofSlider').value);
-            document.getElementById('billVal').innerText = '₹' + bill.toLocaleString('en-IN');
-            document.getElementById('roofVal').innerText = roof + ' sq ft';
-
-            var units = bill / 8;
-            var kw = Math.max(1, Math.min(10, Math.ceil(units / 120)));
-            var subsidy = kw === 1 ? 30000 : (kw === 2 ? 60000 : 78000);
-            var estCost = kw * 62000;
-            var net = Math.max(0, estCost - subsidy);
-            var sav = bill * 12;
-
-            document.getElementById('solKw').innerText = kw + ' kW';
-            document.getElementById('solSub').innerText = '₹' + subsidy.toLocaleString('en-IN');
-            document.getElementById('solNet').innerText = '₹' + net.toLocaleString('en-IN');
-            document.getElementById('solSav').innerText = '₹' + sav.toLocaleString('en-IN');
-          }
-          updateSolar();
+        function calcSolar() {
+          const bill = parseFloat(document.getElementById('solar-bill').value) || 3000;
+          const tariff = parseFloat(document.getElementById('solar-tariff').value) || 8;
+          let kw = Math.ceil(((bill / tariff) / 120) * 10) / 10;
+          if (kw < 1) kw = 1.0;
+          if (kw > 10) kw = 10.0;
+          let subsidy = kw <= 1 ? 30000 : (kw <= 2 ? 60000 : 78000);
+          const totalCost = kw * 60000;
+          const netCost = Math.max(0, totalCost - subsidy);
+          const annualSavings = kw * 4 * 365 * tariff;
+          document.getElementById('res-kw').innerText = kw.toFixed(1) + ' kW';
+          document.getElementById('res-subsidy').innerText = '₹' + subsidy.toLocaleString('en-IN');
+          document.getElementById('res-netcost').innerText = '₹' + netCost.toLocaleString('en-IN');
+          document.getElementById('res-savings').innerText = '₹' + Math.round(annualSavings).toLocaleString('en-IN') + ' / yr';
+        }
+        window.onload = calcSolar;
         </script>
         
-    </div>
 
-    <!-- Monetization Area -->
-    <div class="p-6 bg-slate-900/40 border border-dashed border-slate-800 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      <div>
-        <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Verified Publisher Network</div>
-        <div class="text-sm font-semibold text-slate-300 mt-0.5">Google AdSense / AdMob Verified Domain (pub-2229349785904510)</div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+      <div class="glass-card p-5 rounded-2xl space-y-2">
+        <div class="text-lg">⚡</div>
+        <h3 class="text-sm font-bold text-white">Zero Latency</h3>
+        <p class="text-xs text-slate-400">Instant processing locally in your browser with sub-second execution speeds.</p>
       </div>
-      <a href="https://dhotiaale.vercel.app" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl transition-all">
-        Explore Dhotiaale
-      </a>
-    </div>
-
-    <!-- How-to Guide & Features -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="glass-card rounded-2xl p-6 space-y-4">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2.5">
-          <span class="p-2 bg-indigo-500/10 rounded-xl text-indigo-400">📌</span> How to Use PM Surya Ghar Calculator
-        </h3>
-        <ol class="space-y-3 text-sm text-slate-300">
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
-            <span>Paste your link or input parameters in the field above.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
-            <span>Click the <strong>Calculate Solar Subsidy ☀️</strong> button to begin fast processing.</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="w-6 h-6 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
-            <span>Preview results and download your crisp, high-quality output instantly.</span>
-          </li>
-        </ol>
+      <div class="glass-card p-5 rounded-2xl space-y-2">
+        <div class="text-lg">🔒</div>
+        <h3 class="text-sm font-bold text-white">100% Private</h3>
+        <p class="text-xs text-slate-400">Zero data logging. Your files and inputs never leave your device.</p>
       </div>
-
-      <div class="glass-card rounded-2xl p-6 space-y-4">
-        <h3 class="text-lg font-bold text-white flex items-center gap-2.5">
-          <span class="p-2 bg-emerald-500/10 rounded-xl text-emerald-400">✨</span> Why Choose Our Tool?
-        </h3>
-        <ul class="space-y-3 text-sm text-slate-300">
-          <li class="flex items-center gap-3">
-            <span class="text-emerald-400 font-bold">✓</span>
-            <span>100% Free with zero subscription or registration walls</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald-400 font-bold">✓</span>
-            <span>Lightning-fast cloud processing with 99.9% uptime</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-emerald-400 font-bold">✓</span>
-            <span>Full compatibility across Android, iPhone, Windows & Mac</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- SEO FAQ -->
-    <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
-      <h3 class="text-xl font-bold text-white flex items-center gap-2.5">
-        <span class="p-2 bg-purple-500/10 rounded-xl text-purple-400">❓</span> Frequently Asked Questions (FAQs)
-      </h3>
-      <div class="space-y-3 pt-2">
-        
-        <details class="group bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 transition-all">
-          <summary class="font-bold text-slate-200 text-sm cursor-pointer flex items-center justify-between">
-            <span>What is the maximum subsidy under PM Surya Ghar?</span>
-            <span class="text-indigo-400 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed">₹30,000 for 1kW, ₹60,000 for 2kW, and ₹78,000 for 3kW or higher.</p>
-        </details>
-        
-      </div>
-    </div>
-
-    <!-- Sister Tools Grid -->
-    <div class="space-y-4 pt-4">
-      <div class="flex items-center justify-between">
-        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider">Explore More High-Speed Viral Tools</h4>
-        <a href="https://dhotiaale.vercel.app/tools" class="text-xs font-bold text-indigo-400 hover:text-indigo-300">View All 20 Tools →</a>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <a href="https://snapinsta-reels-downloader.vercel.app" class="p-3.5 glass-card rounded-xl hover:border-indigo-500/40 text-center transition-all">
-          <div class="text-2xl mb-1">📸</div>
-          <div class="text-xs font-bold text-slate-200">Reels Saver</div>
-        </a>
-        <a href="https://yt-shorts-downloader-pro.vercel.app" class="p-3.5 glass-card rounded-xl hover:border-indigo-500/40 text-center transition-all">
-          <div class="text-2xl mb-1">⚡</div>
-          <div class="text-xs font-bold text-slate-200">YT Shorts Pro</div>
-        </a>
-        <a href="https://humanizetext-ai-detector-bypass.vercel.app" class="p-3.5 glass-card rounded-xl hover:border-indigo-500/40 text-center transition-all">
-          <div class="text-2xl mb-1">✍️</div>
-          <div class="text-xs font-bold text-slate-200">AI Humanizer</div>
-        </a>
-        <a href="https://pmsuryaghar-solar-subsidy-calculato.vercel.app" class="p-3.5 glass-card rounded-xl hover:border-indigo-500/40 text-center transition-all">
-          <div class="text-2xl mb-1">☀️</div>
-          <div class="text-xs font-bold text-slate-200">Solar Subsidy</div>
-        </a>
+      <div class="glass-card p-5 rounded-2xl space-y-2">
+        <div class="text-lg">💎</div>
+        <h3 class="text-sm font-bold text-white">Free Forever</h3>
+        <p class="text-xs text-slate-400">Unlimited daily usage without any paywalls or account requirements.</p>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/80 bg-slate-950 py-10 text-xs text-slate-500 mt-12 relative z-10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="text-lg">☀️</span>
-        <span class="font-bold text-slate-300">PM Surya Ghar Calculator</span>
-        <span>— Powered by Dhotiaale High-Traffic Network</span>
-      </div>
-      <div class="flex items-center gap-6 text-slate-400 font-semibold">
-        <a href="https://dhotiaale.vercel.app" class="hover:text-white">Dhotiaale Hub</a>
-        <a href="https://dhotiaale.vercel.app/news" class="hover:text-white">Daily News</a>
-        <a href="https://github.com/dhakadrachora" class="hover:text-white">GitHub</a>
-      </div>
+  <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 space-y-2">
+      <p>© 2026 PM Surya Ghar Solar Subsidy Calculator 2026 (Official DBT Rates) — Part of the Dhotiaale Suite.</p>
     </div>
   </footer>
-
 </body>
 </html>
